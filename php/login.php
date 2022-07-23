@@ -18,19 +18,14 @@ function loginUser($email, $password){
     $main_file = array_map('str_getcsv', file('../storage/users.csv'));
 
         $verify_email = array_column($main_file, 1);
-        $verify_password = array_column($main_file, 2);
-
-
+    
         $search_for_email = array_search($email, $verify_email);
-        $search_for_password = array_search($password, $verify_password);
-
 
         if (($search_for_email = array_search($email, $verify_email)) !== FALSE) {
-            if (($search_for_password = array_search($password, $verify_password)) !== FALSE){
+            $data = ($main_file[$search_for_email]);
+            if ($data[2] === $password){
 
-                $data = ($main_file[$search_for_email]);
-
-                $a = $data[0];
+               $a = $data[0];
 
                 $_SESSION['username'] = $a;
 

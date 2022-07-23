@@ -31,7 +31,7 @@ function resetPassword($email, $newpassword){
         }
 
         else {    
-            echo "<script> alert ('Email does not exist'); 
+            echo "<script> alert ('User does not exist'); 
             window.location = 'http://localhost/mycode.php/userAuth/forms/resetpassword.html'; </script>";    }
 
         $task = fopen('../storage/users.csv', 'w');    
