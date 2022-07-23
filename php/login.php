@@ -22,7 +22,7 @@ function loginUser($email, $password){
 
 
         $search_for_email = array_search($email, $verify_email);
-        $search_for_password = array_search($passwoerd, $verify_password);
+        $search_for_password = array_search($password, $verify_password);
 
 
         if (($search_for_email = array_search($email, $verify_email)) !== FALSE) {
@@ -37,6 +37,10 @@ function loginUser($email, $password){
                 header('location: http://localhost/mycode.php/userAuth/dashboard.php');
         
         }
+
+        else {    
+            echo "<script> alert ('Either email or password is wrong'); 
+            window.location = 'http://localhost/mycode.php/userAuth/forms/login.html'; </script>";    }
     }
 
         else {    
@@ -47,7 +51,7 @@ function loginUser($email, $password){
         
         foreach ($main_file as $value) 
         {    
-            fgets($svtask, $value);   
+            fgetcsv($task, $value);   
             
         }
 
